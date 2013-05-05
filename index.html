@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>LOLCODE in CodeMirror</title>
+    <link type="text/css" rel="stylesheet" href="cm/codemirror.css" />
+    <script type="text/javascript" src="cm/codemirror.js"></script>
+    <link type="text/css" rel="stylesheet" href="cm/ambiance.css" />
+    <script src="lolcode.js"></script>
+    <style type="text/css">
+        body {
+            font-family: sans-serif;
+        }
+        .CodeMirror {
+            height: auto;
+            max-height: 100%;
+        }
+    </style>
+  </head>
+  <body>
+<div><textarea id="code" name="code">HAI
+I HAS A NUMBER
+GIMMEH NUMBER
+NUMBER IS NOW A NUMBAR
+I HAS A IMAGINARY ITZ FAIL
+
+NUMBER SMALLR THAN 0.0?, O RLY?
+  YA RLY
+      NUMBER R PRODUKT OF NUMBER AN -1
+      IMAGINARY R WIN
+OIC
+
+I HAS A X_N ITZ 10
+I HAS A LIMIT ITZ 100
+I HAS A COUNTER ITZ 0
+IM IN YR LOOP UPPIN YR COUNTER WILE COUNTER SMALLR THAN LIMIT?
+  I HAS A TERM ITZ QUOSHUNT OF NUMBER AN X_N
+  TERM R SUM OF X_N AN TERM
+  TERM R QUOSHUNT OF TERM AN 2
+  X_N R TERM
+  IM OUTTA YR LOOP
+
+BOTH SAEM IMAGINARY AN WIN, O RLY?
+  YA RLY
+    BOTH SAEM 1 AN X_N, O RLY?
+      YA RLY
+        X_N R "i"
+      NO WAI
+        X_N R SMOOSH "(" AN X_N AN "i)" MKAY
+  OIC
+OIC
+
+VISIBLE SMOOSH "sqrt(" AN NUMBER AN ") ~ ±" AN X_N
+KTHXBYE
+</textarea></div>
+
+    <script>
+      var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+        lineNumbers: true,
+        continueComments: "Enter",
+        theme: 'ambiance',
+        textWrapping: true
+      });
+    </script>
+</body>
+</html>
