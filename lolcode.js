@@ -19,7 +19,7 @@ CodeMirror.defineMode('lolcode', function(config, parserConfig) {
             d: /"([^":]+|\:.)*"?/,
             s: /'([^':]+|\:.)*'?/,
         },
-        type: /NUMBA?R|TROOF|YARN|NOOB|BUKKIT/,
+        type: /(NUMBA?R|TROOF|YARN|NOOB|BUKKIT)\b/,
         // we're not doing anything smart enough to warrant treating any of these
         // separately so we'll mash it into one regex.
         ops: new RegExp(
@@ -40,7 +40,8 @@ CodeMirror.defineMode('lolcode', function(config, parserConfig) {
                 '(IT[ZS](\\s+GOT)?)|(I\\s+HAS\\s+A)|' +
                 'A|AN|MKAY|R|YR|(FOUND\\s+YR)|(O\\s+NVM)|GTFO|WILE|' +
                 'MAEK|(IS\\s+NOW\\s+A)|' +
-                'G[IE]MMEH|VISIBLE' +
+                'G[IE]MMEH|VISIBLE|' +
+                '(PLZ\\s+HALP)' +
                 ')\\b'
             ),
             HOWDUZI: /HOW\s+DUZ\s+I\b/,
@@ -186,7 +187,7 @@ CodeMirror.defineMode('lolcode', function(config, parserConfig) {
             return 'builtin';
         }
         else if (stream.match(p.ident)) {
-            return null;
+            return 'identifier';
         }
         
         else {
